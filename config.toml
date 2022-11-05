@@ -1,0 +1,14 @@
+# metadata
+baseURL = 'https://ckf42.github.io/'
+theme = "hugo-bearblog"
+title = "Fanatic Monologue"
+languageCode = 'en-us'
+author = "KF"
+timeZone = "UTC"
+
+# show robots.txt
+# enableRobotsTXT = true
+
+[params]
+    dateFormat = "2006-01-02"
+

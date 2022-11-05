@@ -1,0 +1,11 @@
+{{ $engine := "mathjax" }}
+{{ if isset .Site.Params "math" }} {{ $engine = . }} {{ end }}
+{{ if isset .Page.Params "math" }} {{ $engine = . }} {{ end }}
+{{ with .Get "engine" }} {{ $engine = . }} {{ end }}
+{{ if eq $engine "mathjax" }}
+    <div class="mathJaxEnv"> \[{{ .Inner }}\] </div>
+    {{- .Page.Store.Set "hasMathJax" true }}
+{{ else }}
+    <div class="katexEnv">\[{{ .Inner }}\]</div> 
+    {{- .Page.Store.Set "hasKatex" true }}
+{{ end }}
